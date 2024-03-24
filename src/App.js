@@ -30,15 +30,6 @@ function App() {
             <DataContext.Provider value={data}>
                 <Routes>
                     <Route
-                        path="/home"
-                        element={
-                            <>
-                                <Header />
-                                <Main />
-                            </>
-                        }
-                    />
-                    <Route
                         path="/"
                         element={
                             <>
@@ -64,9 +55,16 @@ function App() {
                             </>
                         }
                     />
-
-                    {/* Path for booking confirmation */}
                     <Route path="/confirm" element={<ConfirmedBooking />} />
+                    <Route
+                        path="*"
+                        element={
+                            <>
+                                <Header />
+                                <Main />
+                            </>
+                        }
+                    />
                 </Routes>
             </DataContext.Provider>
             <Footer />
